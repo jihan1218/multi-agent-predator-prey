@@ -1,0 +1,3 @@
+[submodule "mujoco-worldgen"]
+	path = mujoco-worldgen
+	url = https://github.com/openai/mujoco-worldgen.git
