@@ -1,0 +1,38 @@
+{
+    "ac_kwargs":	{},
+    "actor_critic":	"mlp_actor_critic",
+    "clip_ratio":	0.2,
+    "env_fn":	"<function <lambda> at 0x10d430ea0>",
+    "epochs":	1000,
+    "exp_name":	"MACL_ppo",
+    "gamma":	0.998,
+    "lam":	0.95,
+    "logger":	{
+        "<spinup.utils.logx.EpochLogger object at 0x10d6080b8>":	{
+            "epoch_dict":	{},
+            "exp_name":	"MACL_ppo",
+            "first_row":	true,
+            "log_current_row":	{},
+            "log_headers":	[],
+            "output_dir":	"../Testing/exp/Thu Mar  4 22:23:18 2021",
+            "output_file":	{
+                "<_io.TextIOWrapper name='../Testing/exp/Thu Mar  4 22:23:18 2021/progress.txt' mode='w' encoding='UTF-8'>":	{
+                    "mode":	"w"
+                }
+            }
+        }
+    },
+    "logger_kwargs":	{
+        "exp_name":	"MACL_ppo",
+        "output_dir":	"../Testing/exp/Thu Mar  4 22:23:18 2021"
+    },
+    "max_ep_len":	1000,
+    "pi_lr":	0.0003,
+    "save_freq":	10,
+    "seed":	33,
+    "steps_per_epoch":	10000,
+    "target_kl":	0.01,
+    "train_pi_iters":	50,
+    "train_v_iters":	50,
+    "vf_lr":	0.0003
+}

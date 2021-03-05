@@ -2,12 +2,15 @@ import numpy as np
 import tensorflow as tf
 import gym
 import time
+import operator
 from copy import deepcopy
 from training.ppo_pkg import core
 from training.ppo_pkg.specs import pi_specs, v_specs
 from spinup.utils.logx import EpochLogger
 from spinup.utils.mpi_tf import MpiAdamOptimizer, sync_all_params
 from spinup.utils.mpi_tools import mpi_fork, mpi_avg, proc_id, mpi_statistics_scalar, num_procs
+from ma_policy.util import listdict2dictnp
+from mae_envs.viewer.policy_viewer import splitobs
 from gym.spaces import Box, Discrete, Dict, MultiDiscrete, Tuple
 from ma_policy.ma_policy import MAPolicy
 
@@ -422,7 +425,7 @@ def ppo(env_fn, actor_critic=core.mlp_actor_critic, ac_kwargs=dict(), seed=33,
                 ob_policy_idx = np.split(np.arange(len(o)), len(policies))
                 actions = []
                 for i, policy in enumerate(policies):
-                    inp = itemgetter(*ob_policy_idx[i])(o)
+                    inp = operator.itemgetter(*ob_policy_idx[i])(o)
                     inp = listdict2dictnp([inp] if ob_policy_idx[i].shape[0] == 1 else inp)
                     ac, info = policy.act(inp)
                     actions.append(ac)
