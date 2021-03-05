@@ -13,7 +13,7 @@ env_fn = lambda: hide_and_seek.make_env()  # choose desired environment
 dir_str = '../Testing/exp/'  # set output directory
 
 now_str = time.asctime(time.localtime())  # get current time stamp and set logger dict
-logger_kwargs = dict(output_dir=dir_str + now_str, exp_name='MACL_ppo')  # for saving information during training
+logger_kwargs = dict(output_dir=dir_str + now_str, exp_name='hide_and_seek')  # for saving information during training
 
 ppo(env_fn=env_fn,  # run ppo training loop (check ppo.py for documentation)
     pi_lr=3e-4,
