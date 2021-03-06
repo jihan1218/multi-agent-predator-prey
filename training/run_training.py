@@ -1,9 +1,8 @@
-from ppo_pkg.ppo import ppo
 import tensorflow as tf
 import gym
 import time
 
-import sys
+from ppo_pkg.ppo import ppo
 from mae_envs.envs import hide_and_seek
 from ma_policy.ma_policy import MAPolicy
 from testing.test_policy import test_ppo
